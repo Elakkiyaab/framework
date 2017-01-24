@@ -1,5 +1,7 @@
 package com.demoqa.testing.testscripts;
 
+import com.demoqa.testing.pageobjects.DraggablePage;
+import com.demoqa.testing.pageobjects.DropPage;
 import com.demoqa.testing.pageobjects.HomePage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
@@ -19,8 +22,11 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
     WebDriver driver;
+
     protected static final String TEST_URL = "http://demoqa.com/";
     HomePage homepage;
+    DraggablePage draggablepage;
+    DropPage droppablepage;
     @BeforeSuite()
     public void setup(){
         System.setProperty("webdriver.chrome.driver", "D://Project//framework//driver//chromedriver.exe");

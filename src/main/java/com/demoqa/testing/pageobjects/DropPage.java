@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DraggablePage {
+public class DropPage {
     WebDriver driver;
 
     By defaulttag = By.xpath("//*[@id='ui-id-1']");
@@ -18,31 +18,23 @@ public class DraggablePage {
 
     By dragandsort = By.xpath("//*[@id='ui-id-5']");
 
-    By dragmebtn = By.xpath("//*[@id='draggable']");
+    By dragsrc = By.xpath("//*[@id='draggableview']");
+    By droptarget=By.xpath("//*[@id='droppableview']");
 
-    By verticledrag = By.xpath("//*[@id='draggabl']/p");
-
-    By horidrag = By.xpath("//*[@id='draggabl2']/p");
-
-    By draginbox = By.xpath("//*[@id='draggabl3']/p");
-    By draginparent = By.xpath("//*[@id='draggabl5']");
-
-
-    public DraggablePage(WebDriver driver) {
+    public DropPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public WebElement clickDrag() {
 
-      driver.findElement(dragmebtn).click();
+        driver.findElement(dragsrc).click();
 
         return null;
     }
+    public WebElement clickDrop() {
 
-    public void clickConstrain() {
+        driver.findElement(droptarget);
 
-        driver.findElement(constrain).click();
-
+        return null;
     }
 }
-
